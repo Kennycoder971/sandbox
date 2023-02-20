@@ -1,17 +1,15 @@
-import { ActionType } from "../action-types";
+import { ActionType } from "../action-types"
 
-interface SearchRepositoriesAction {
-    type:ActionType.SEARCH_REPOSITORIES,
+interface LoadingAction {
+    type:ActionType.LOADING
 }
-interface SearchRepositoriesSuccessAction {
-    type:ActionType.SEARCH_REPOSITORIES_SUCCESS,
-    payload:string[]
+interface SuccessAction {
+    payload:string[],
+    type:ActionType.SUCCESS
 }
-interface SearchRepositoriesErrorAction {
-    type:ActionType.SEARCH_REPOSITORIES_ERROR,
-    payload:string
+interface ErrorAction {
+    payload:string,
+    type:ActionType.ERROR
 }
 
-export type Action = SearchRepositoriesAction 
-            | SearchRepositoriesSuccessAction
-            | SearchRepositoriesErrorAction
+export type Action = LoadingAction | ErrorAction | SuccessAction 
