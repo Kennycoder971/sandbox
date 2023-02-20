@@ -6,8 +6,13 @@ interface Repo {
     error:string | null | undefined;
 }
 
+const initialState = {
+    loading:false,
+    error: null,
+    data:[]
+}
 
-const reducer = ((state:Repo, action: Action):Repo => {
+const reducer = ((state:Repo = initialState, action: Action):Repo => {
     switch (action.type) {
         case 'loading':
             return {loading:true, data:[], error: null}
